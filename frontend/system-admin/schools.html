@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>School Management | SafeRide SA</title><link rel="stylesheet" href="../css/style.css"></head>
+<body><div class="app">
+<aside class="sidebar">
+  <div class="brand">SafeRide SA<span>System Administrator</span></div>
+  <nav class="nav">
+    <a href="dashboard.html" class="active">▦ Dashboard</a>
+    <a href="users.html">♙ User Management</a>
+    <a href="schools.html">▣ School Management</a>
+    <a href="audit-logs.html">◷ Audit Logs</a>
+  </nav>
+</aside>
+<main class="main">
+<header class="topbar">
+  <h1>SafeRide SA</h1>
+  <div class="user-chip"><span>System Administrator</span><div class="avatar">SA</div></div>
+</header>
+<section class="content">
+<div class="page-head"><div><h2>School Management</h2><p>Maintain registered schools and their administrator contact details.</p></div><button class="btn btn-primary" onclick="alert('Create-school form will connect to the backend later.')">+ Add School</button></div>
+<div class="card panel"><div class="filters"><input class="input" id="schoolSearch" placeholder="Search school..." oninput="filterSchools()"></div>
+<div class="table-wrap"><table><thead><tr><th>School</th><th>Address</th><th>Admin</th><th>Contact</th><th>Status</th><th>Action</th></tr></thead>
+<tbody id="schoolTable">
+<tr><td>Sol Plaatje Primary</td><td>Kimberley, Northern Cape</td><td>Thandi Ndlovu</td><td>thandi@example.com</td><td><span class="badge badge-green">Active</span></td><td><button class="btn btn-outline btn-sm">View</button></td></tr>
+<tr><td>Greenfields High School</td><td>Kimberley, Northern Cape</td><td>David Molefe</td><td>david@example.com</td><td><span class="badge badge-green">Active</span></td><td><button class="btn btn-outline btn-sm">View</button></td></tr>
+<tr><td>Riverside Secondary</td><td>Bloemfontein, Free State</td><td>Lerato Mokoena</td><td>lerato@example.com</td><td><span class="badge badge-amber">Review</span></td><td><button class="btn btn-outline btn-sm">View</button></td></tr>
+<tr><td>Ikamva Academy</td><td>Welkom, Free State</td><td>Ayanda Dube</td><td>ayanda@example.com</td><td><span class="badge badge-green">Active</span></td><td><button class="btn btn-outline btn-sm">View</button></td></tr>
+</tbody></table></div></div>
+</section></main></div><script src="js/system-admin.js"></script></body></html>

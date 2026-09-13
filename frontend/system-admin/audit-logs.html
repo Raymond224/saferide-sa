@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Audit Logs | SafeRide SA</title><link rel="stylesheet" href="../css/style.css"></head>
+<body><div class="app">
+<aside class="sidebar">
+  <div class="brand">SafeRide SA<span>System Administrator</span></div>
+  <nav class="nav">
+    <a href="dashboard.html" class="active">▦ Dashboard</a>
+    <a href="users.html">♙ User Management</a>
+    <a href="schools.html">▣ School Management</a>
+    <a href="audit-logs.html">◷ Audit Logs</a>
+  </nav>
+</aside>
+<main class="main">
+<header class="topbar">
+  <h1>SafeRide SA</h1>
+  <div class="user-chip"><span>System Administrator</span><div class="avatar">SA</div></div>
+</header>
+<section class="content">
+<div class="page-head"><div><h2>Audit Log Viewer</h2><p>Review timestamped, user-attributed administrative activity.</p></div><button class="btn btn-outline" onclick="window.print()">Print / Export</button></div>
+<div class="alert alert-info">Audit records are intended to be immutable and tamper-evident once backend persistence is connected.</div>
+<div class="card panel"><div class="filters"><input class="input" id="auditSearch" placeholder="Search action, user or table..." oninput="filterAudit()">
+<select class="select" id="auditAction" onchange="filterAudit()"><option value="">All actions</option><option>LOGIN</option><option>CREATE</option><option>UPDATE</option><option>SUSPEND</option><option>RESET_PASSWORD</option></select></div>
+<div class="table-wrap"><table><thead><tr><th>Timestamp</th><th>User</th><th>Action</th><th>Table</th><th>Record ID</th><th>IP Address</th></tr></thead>
+<tbody id="auditTable">
+<tr><td>2026-09-13 10:32</td><td>System Admin</td><td>CREATE</td><td>Users</td><td>USR-024</td><td>192.168.1.12</td></tr>
+<tr><td>2026-09-13 09:47</td><td>System Admin</td><td>SUSPEND</td><td>Users</td><td>USR-019</td><td>192.168.1.12</td></tr>
+<tr><td>2026-09-12 15:20</td><td>School Admin</td><td>UPDATE</td><td>Schools</td><td>SCH-003</td><td>192.168.1.20</td></tr>
+<tr><td>2026-09-12 12:05</td><td>System Admin</td><td>RESET_PASSWORD</td><td>Users</td><td>USR-011</td><td>192.168.1.12</td></tr>
+<tr><td>2026-09-12 08:15</td><td>Operator</td><td>LOGIN</td><td>Users</td><td>USR-007</td><td>192.168.1.31</td></tr>
+</tbody></table></div></div>
+</section></main></div><script src="js/system-admin.js"></script></body></html>
