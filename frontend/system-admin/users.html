@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>User Management | SafeRide SA</title><link rel="stylesheet" href="../css/style.css"></head>
+<body><div class="app">
+<aside class="sidebar">
+  <div class="brand">SafeRide SA<span>System Administrator</span></div>
+  <nav class="nav">
+    <a href="dashboard.html" class="active">▦ Dashboard</a>
+    <a href="users.html">♙ User Management</a>
+    <a href="schools.html">▣ School Management</a>
+    <a href="audit-logs.html">◷ Audit Logs</a>
+  </nav>
+</aside>
+<main class="main">
+<header class="topbar">
+  <h1>SafeRide SA</h1>
+  <div class="user-chip"><span>System Administrator</span><div class="avatar">SA</div></div>
+</header>
+<section class="content">
+<div class="page-head"><div><h2>User Management</h2><p>View, activate, suspend and manage SafeRide SA user accounts.</p></div><button class="btn btn-primary" onclick="alert('Create-user form will connect to the backend later.')">+ Add User</button></div>
+<div class="card panel"><div class="filters"><input class="input" id="userSearch" placeholder="Search name or email..." oninput="filterUsers()">
+<select class="select" id="roleFilter" onchange="filterUsers()"><option value="">All roles</option><option>Parent</option><option>Operator</option><option>School Admin</option><option>System Admin</option></select>
+<select class="select" id="statusFilter" onchange="filterUsers()"><option value="">All statuses</option><option>Active</option><option>Suspended</option></select></div>
+<div class="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Created</th><th>Action</th></tr></thead>
+<tbody id="userTable">
+<tr data-role="Parent" data-status="Active"><td>Nomsa Dlamini</td><td>nomsa@example.com</td><td>Parent</td><td><span class="badge badge-green">Active</span></td><td>2026-08-10</td><td><button class="btn btn-outline btn-sm" onclick="toggleStatus(this)">Suspend</button></td></tr>
+<tr data-role="Operator" data-status="Active"><td>Sipho Mokoena</td><td>sipho@example.com</td><td>Operator</td><td><span class="badge badge-green">Active</span></td><td>2026-08-08</td><td><button class="btn btn-outline btn-sm" onclick="toggleStatus(this)">Suspend</button></td></tr>
+<tr data-role="School Admin" data-status="Active"><td>Thandi Ndlovu</td><td>thandi@example.com</td><td>School Admin</td><td><span class="badge badge-green">Active</span></td><td>2026-07-21</td><td><button class="btn btn-outline btn-sm" onclick="toggleStatus(this)">Suspend</button></td></tr>
+<tr data-role="Operator" data-status="Suspended"><td>John Maseko</td><td>john@example.com</td><td>Operator</td><td><span class="badge badge-red">Suspended</span></td><td>2026-06-14</td><td><button class="btn btn-outline btn-sm" onclick="toggleStatus(this)">Activate</button></td></tr>
+<tr data-role="Parent" data-status="Active"><td>Ayanda Khumalo</td><td>ayanda@example.com</td><td>Parent</td><td><span class="badge badge-green">Active</span></td><td>2026-05-30</td><td><button class="btn btn-outline btn-sm" onclick="toggleStatus(this)">Suspend</button></td></tr>
+</tbody></table></div></div>
+</section></main></div><script src="js/system-admin.js"></script></body></html>
