@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Route Deviation — SafeRide SA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">SafeRide SA<span>School Admin</span></div>
+    <nav class="nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="operators.html">Operators</a>
+      <a href="incidents.html">Incidents</a>
+      <a href="compliance.html">Compliance</a>
+      <a href="messages.html">Messages</a>
+      <a href="route-deviation.html" class="active">Route Deviation</a>
+      <a href="../index.html">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h1>Route Deviation</h1>
+      <div class="user-chip"><div class="avatar">RD</div><div>Raymond Dlamini</div></div>
+    </header>
+
+    <div class="content">
+      <div class="page-head">
+        <div>
+          <h2>Registered vs Actual Route</h2>
+          <p>Trip #A-1042 · Diamond Transport · CA 456-789</p>
+        </div>
+        <button class="btn btn-danger">Notify All Parents</button>
+      </div>
+
+      <div class="alert alert-warning">
+        ⚠ Deviation detected 1.2 km from registered route at 07:38. 24 learners on board.
+      </div>
+
+      <div class="card panel">
+        <div class="panel-title"><h3>Map</h3></div>
+        <div style="background:#E8EEF3;border-radius:12px;height:400px;display:grid;place-items:center;color:var(--muted)">
+          [ Live map placeholder — Leaflet integration once backend is ready ]
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:20px">
+        <div class="card panel">
+          <div class="panel-title"><h3>Deviation Details</h3></div>
+          <p><strong>Time:</strong> 07:38</p>
+          <p><strong>Distance from route:</strong> 1.2 km</p>
+          <p><strong>Duration off route:</strong> 6 minutes</p>
+          <p><strong>Learners on board:</strong> 24</p>
+        </div>
+        <div class="card panel">
+          <div class="panel-title"><h3>Recent Deviations</h3></div>
+          <div class="activity">
+            <div class="dot"></div>
+            <div><strong>Diamond Transport</strong><small>Route C · 2 days ago</small></div>
+          </div>
+          <div class="activity">
+            <div class="dot"></div>
+            <div><strong>Galeshewe Tours</strong><small>Route A · 5 days ago</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

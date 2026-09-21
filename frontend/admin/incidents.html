@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incidents — SafeRide SA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">SafeRide SA<span>School Admin</span></div>
+    <nav class="nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="operators.html">Operators</a>
+      <a href="incidents.html" class="active">Incidents</a>
+      <a href="compliance.html">Compliance</a>
+      <a href="messages.html">Messages</a>
+      <a href="route-deviation.html">Route Deviation</a>
+      <a href="../index.html">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h1>Incident Inbox</h1>
+      <div class="user-chip"><div class="avatar">RD</div><div>Raymond Dlamini</div></div>
+    </header>
+
+    <div class="content">
+      <div class="page-head">
+        <div>
+          <h2>Incident Inbox</h2>
+          <p>Reports from parents and operators. Update status as you investigate.</p>
+        </div>
+      </div>
+
+      <div class="filters">
+        <select class="select">
+          <option>All statuses</option>
+          <option>Open</option>
+          <option>Investigating</option>
+          <option>Resolved</option>
+        </select>
+        <input class="input" placeholder="Search incidents…">
+      </div>
+
+      <div class="card panel">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Date</th><th>Reported by</th><th>Type</th><th>Trip</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2025-01-15 07:42</td>
+                <td>Puleng Mokoena (Parent)</td>
+                <td>Route deviation</td>
+                <td>Route A · CA 123-456</td>
+                <td><span class="badge badge-red">Open</span></td>
+                <td><a href="incident-detail.html" class="btn btn-outline btn-sm">View</a></td>
+              </tr>
+              <tr>
+                <td>2025-01-14 16:10</td>
+                <td>Qetelo Sithole (Operator)</td>
+                <td>Vehicle breakdown</td>
+                <td>Route B · CA 789-012</td>
+                <td><span class="badge badge-amber">Investigating</span></td>
+                <td><a href="incident-detail.html" class="btn btn-outline btn-sm">View</a></td>
+              </tr>
+              <tr>
+                <td>2025-01-12 08:05</td>
+                <td>Puleng Mokoena (Parent)</td>
+                <td>Late pickup</td>
+                <td>Route A · CA 123-456</td>
+                <td><span class="badge badge-green">Resolved</span></td>
+                <td><a href="incident-detail.html" class="btn btn-outline btn-sm">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
