@@ -31,3 +31,21 @@ function filterAudit(){
     row.style.display=(!q||text.includes(q))&&(!action||rowAction===action)?'':'none';
   });
 }
+
+function viewAuditLog(button){
+  const row = button.closest('tr');
+  const cells = row.querySelectorAll('td');
+
+  document.getElementById('viewAuditTimestamp').textContent = cells[0].textContent;
+  document.getElementById('viewAuditUser').textContent = cells[1].textContent;
+  document.getElementById('viewAuditAction').textContent = cells[2].textContent;
+  document.getElementById('viewAuditTable').textContent = cells[3].textContent;
+  document.getElementById('viewAuditRecord').textContent = cells[4].textContent;
+  document.getElementById('viewAuditIP').textContent = cells[5].textContent;
+
+  document.getElementById('auditDetailsModal').style.display = 'flex';
+}
+
+function closeAuditDetails(){
+  document.getElementById('auditDetailsModal').style.display = 'none';
+}
