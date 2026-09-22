@@ -31,3 +31,51 @@ function filterAudit(){
     row.style.display=(!q||text.includes(q))&&(!action||rowAction===action)?'':'none';
   });
 }
+
+function openAddUserForm(){
+  document.getElementById('addUserModal').style.display = 'flex';
+}
+
+function closeAddUserForm(){
+  document.getElementById('addUserModal').style.display = 'none';
+
+  document.getElementById('newUserName').value = '';
+  document.getElementById('newUserEmail').value = '';
+  document.getElementById('newUserRole').value = '';
+}
+
+function addUser(){
+  const name = document.getElementById('newUserName').value.trim();
+  const email = document.getElementById('newUserEmail').value.trim();
+  const role = document.getElementById('newUserRole').value;
+
+  if(!name || !email || !role){
+    alert('Please complete all fields.');
+    return;
+  }
+
+  const table = document.getElementById('userTable');
+  const row = document.createElement('tr');
+
+  row.dataset.role = role;
+  row.dataset.status = 'Active';
+
+  row.innerHTML = `
+    <td>${name}</td>
+    <td>${email}</td>
+    <td>${role}</td>
+    <td><span class="badge badge-green">Active</span></td>
+    <td>${new Date().toISOString().split('T')[0]}</td>
+    <td>
+      <button class="btn btn-outline btn-sm" onclick="toggleStatus(this)">
+        Suspend
+      </button>
+    </td>
+  `;
+
+  table.appendChild(row);
+
+  closeAddUserForm();
+
+  alert('User added successfully.');
+}
