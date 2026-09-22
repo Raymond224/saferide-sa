@@ -17,7 +17,8 @@
   <div class="user-chip"><span>System Administrator</span><div class="avatar">SA</div></div>
 </header>
 <section class="content">
-<div class="page-head"><div><h2>User Management</h2><p>View, activate, suspend and manage SafeRide SA user accounts.</p></div><button class="btn btn-primary" onclick="alert('Create-user form will connect to the backend later.')">+ Add User</button></div>
+<div class="page-head"><div><h2>User Management</h2><p>View, activate, suspend and manage SafeRide SA user accounts.</p></div>
+<button class="btn btn-primary" onclick="openAddUserForm()">+ Add User</button></div>
 <div class="card panel"><div class="filters"><input class="input" id="userSearch" placeholder="Search name or email..." oninput="filterUsers()">
 <select class="select" id="roleFilter" onchange="filterUsers()"><option value="">All roles</option><option>Parent</option><option>Operator</option><option>School Admin</option><option>System Admin</option></select>
 <select class="select" id="statusFilter" onchange="filterUsers()"><option value="">All statuses</option><option>Active</option><option>Suspended</option></select></div>
@@ -29,4 +30,45 @@
 <tr data-role="Operator" data-status="Suspended"><td>John Maseko</td><td>john@example.com</td><td>Operator</td><td><span class="badge badge-red">Suspended</span></td><td>2026-06-14</td><td><button class="btn btn-outline btn-sm" onclick="toggleStatus(this)">Activate</button></td></tr>
 <tr data-role="Parent" data-status="Active"><td>Ayanda Khumalo</td><td>ayanda@example.com</td><td>Parent</td><td><span class="badge badge-green">Active</span></td><td>2026-05-30</td><td><button class="btn btn-outline btn-sm" onclick="toggleStatus(this)">Suspend</button></td></tr>
 </tbody></table></div></div>
-</section></main></div><script src="js/system-admin.js"></script></body></html>
+
+</section></main></div>
+<!-- Add User Modal -->
+<div id="addUserModal" class="modal" style="display:none;">
+  <div class="modal-content">
+
+    <h2>Add User</h2>
+
+    <label for="newUserName">Full Name</label>
+    <input
+      class="input"
+      id="newUserName"
+      type="text"
+      placeholder="Enter full name"
+    >
+
+    <label for="newUserEmail">Email</label>
+    <input
+      class="input"
+      id="newUserEmail"
+      type="email"
+      placeholder="Enter email"
+    >
+
+    <label for="newUserRole">Role</label>
+    <select class="select" id="newUserRole">
+      <option value="">Select role</option>
+      <option>Parent</option>
+      <option>Operator</option>
+      <option>School Admin</option>
+      <option>System Admin</option>
+    </select>
+
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="closeAddUserForm()">Cancel</button>
+      <button class="btn btn-primary" onclick="addUser()">Add User</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/system-admin.js"></script></body></html>
