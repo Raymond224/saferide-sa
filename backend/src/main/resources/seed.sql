@@ -30,19 +30,19 @@ INSERT INTO schools (id, name, address, phone, email) VALUES
 -- USERS (password for all: password123)
 -- ============================================================
 INSERT INTO users (id, username, password_hash, role, full_name, email, phone, school_id) VALUES
-(1, 'sysadmin',  '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'system-admin', 'Phiwe Nkosi',        'phiwe@saferide.co.za',    '072-111-1111', NULL),
-(2, 'admin',     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'admin',        'Raymond Dlamini',    'raymond@galeshewe.co.za', '072-222-2222', 1),
-(3, 'admin2',    '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'admin',        'Sarah Mokoena',      'sarah@kbh.co.za',         '072-222-3333', 2),
-(4, 'admin3',    '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'admin',        'Peter Nkosi',        'peter@diamantveld.co.za', '072-222-4444', 3),
-(5, 'parent',    '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'parent',       'Puleng Mokoena',     'puleng@gmail.com',        '072-333-3333', 1),
-(6, 'parent2',   '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'parent',       'Thabo Nkosi',        'thabo@gmail.com',         '072-333-4444', 1),
-(7, 'parent3',   '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'parent',       'Lerato Mahlangu',    'lerato@gmail.com',        '072-333-5555', 1),
-(8, 'parent4',   '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'parent',       'Sipho Zulu',         'sipho@gmail.com',         '072-333-6666', 2),
-(9, 'parent5',   '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'parent',       'Naledi Khumalo',     'naledi@gmail.com',        '072-333-7777', 1),
-(10,'operator',  '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'operator',     'Qetelo Sithole',     'qetelo@tours.co.za',      '072-444-4444', 1),
-(11,'operator2', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'operator',     'Jacob Mahlangu',     'jacob@diamond.co.za',     '072-444-5555', 1),
-(12,'operator3', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'operator',     'David Omiwole',      'david@kidsrides.co.za',   '072-444-6666', 1),
-(13,'operator4', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'operator',     'Michael Lukayi',     'michael@nkosi.co.za',     '072-444-7777', 1);
+(1, 'sysadmin',  '$2a$10$waayRDOvYFb4y9P0OGKc6O8SHqGGhUQ95sL78KuURKLhHuXPfczn6', 'system-admin', 'Phiwe Nkosi',        'phiwe@saferide.co.za',    '072-111-1111', NULL),
+(2, 'admin',     '$2a$10$waayRDOvYFb4y9P0OGKc6O8SHqGGhUQ95sL78KuURKLhHuXPfczn6', 'admin',        'Raymond Dlamini',    'raymond@galeshewe.co.za', '072-222-2222', 1),
+(3, 'admin2',    '$2a$10$waayRDOvYFb4y9P0OGKc6O8SHqGGhUQ95sL78KuURKLhHuXPfczn6', 'admin',        'Sarah Mokoena',      'sarah@kbh.co.za',         '072-222-3333', 2),
+(4, 'admin3',    '$2a$10$waayRDOvYFb4y9P0OGKc6O8SHqGGhUQ95sL78KuURKLhHuXPfczn6', 'admin',        'Peter Nkosi',        'peter@diamantveld.co.za', '072-222-4444', 3),
+(5, 'parent',    '$2a$10$waayRDOvYFb4y9P0OGKc6O8SHqGGhUQ95sL78KuURKLhHuXPfczn6', 'parent',       'Puleng Mokoena',     'puleng@gmail.com',        '072-333-3333', 1),
+(6, 'parent2',   '$2a$10$waayRDOvYFb4y9P0OGKc6O8SHqGGhUQ95sL78KuURKLhHuXPfczn6', 'parent',       'Thabo Nkosi',        'thabo@gmail.com',         '072-333-4444', 1),
+(7, 'parent3',   '$2a$10$waayRDOvYFb4y9P0OGKc6O8SHqGGhUQ95sL78KuURKLhHuXPfczn6', 'parent',       'Lerato Mahlangu',    'lerato@gmail.com',        '072-333-5555', 1),
+(8, 'parent4',   '$2a$10$waayRDOvYFb4y9P0OGKc6O8SHqGGhUQ95sL78KuURKLhHuXPfczn6', 'parent',       'Sipho Zulu',         'sipho@gmail.com',         '072-333-6666', 2),
+(9, 'parent5',   '$2a$10$waayRDOvYFb4y9P0OGKc6O8SHqGGhUQ95sL78KuURKLhHuXPfczn6', 'parent',       'Naledi Khumalo',     'naledi@gmail.com',        '072-333-7777', 1),
+(10,'operator',  '$2a$10$waayRDOvYFb4y9P0OGKc6O8SHqGGhUQ95sL78KuURKLhHuXPfczn6', 'operator',     'Qetelo Sithole',     'qetelo@tours.co.za',      '072-444-4444', 1),
+(11,'operator2', '$2a$10$waayRDOvYFb4y9P0OGKc6O8SHqGGhUQ95sL78KuURKLhHuXPfczn6', 'operator',     'Jacob Mahlangu',     'jacob@diamond.co.za',     '072-444-5555', 1),
+(12,'operator3', '$2a$10$waayRDOvYFb4y9P0OGKc6O8SHqGGhUQ95sL78KuURKLhHuXPfczn6', 'operator',     'David Omiwole',      'david@kidsrides.co.za',   '072-444-6666', 1),
+(13,'operator4', '$2a$10$waayRDOvYFb4y9P0OGKc6O8SHqGGhUQ95sL78KuURKLhHuXPfczn6', 'operator',     'Michael Lukayi',     'michael@nkosi.co.za',     '072-444-7777', 1);
 
 -- ============================================================
 -- LEARNERS
