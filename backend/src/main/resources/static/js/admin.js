@@ -74,8 +74,14 @@ async function loadCounts() {
     }
   } catch (e) { /* ignore */ }
 
-  // Messages placeholder — will be replaced when messages endpoint exists
-  document.getElementById('statMessages').textContent = 5;
+  // Parent messages — real unread count
+  try {
+    const res = await fetch(`${API}/messages/summary`, { credentials: 'same-origin' });
+    if (res.ok) {
+      const summary = await res.json();
+      document.getElementById('statMessages').textContent = summary.unread;
+    }
+  } catch (e) { /* ignore */ }
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
