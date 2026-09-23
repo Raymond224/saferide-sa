@@ -54,10 +54,18 @@ async function loadTrips() {
 }
 
 async function loadCounts() {
-  // Placeholder counts — will be replaced when incidents/messages endpoints exist
+  // Open incidents — real count
+  try {
+    const res = await fetch(`${API}/incidents?status=open`, { credentials: 'same-origin' });
+    if (res.ok) {
+      const incidents = await res.json();
+      document.getElementById('statIncidents').textContent = incidents.length;
+    }
+  } catch (e) { /* ignore */ }
+
+  // Placeholders — will be replaced when compliance/messages endpoints exist
   document.getElementById('statCompliance').textContent = 2;
   document.getElementById('statComplianceNote').textContent = '1 expired · 1 expiring soon';
-  document.getElementById('statIncidents').textContent = 1;
   document.getElementById('statMessages').textContent = 5;
 }
 
