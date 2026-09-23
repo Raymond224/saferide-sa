@@ -63,9 +63,18 @@ async function loadCounts() {
     }
   } catch (e) { /* ignore */ }
 
-  // Placeholders — will be replaced when compliance/messages endpoints exist
-  document.getElementById('statCompliance').textContent = 2;
-  document.getElementById('statComplianceNote').textContent = '1 expired · 1 expiring soon';
+  // Compliance alerts — real count
+  try {
+    const res = await fetch(`${API}/compliance/summary`, { credentials: 'same-origin' });
+    if (res.ok) {
+      const summary = await res.json();
+      document.getElementById('statCompliance').textContent = summary.totalAlerts;
+      document.getElementById('statComplianceNote').textContent =
+        `${summary.nonCompliant} expired · ${summary.expiringSoon} expiring soon`;
+    }
+  } catch (e) { /* ignore */ }
+
+  // Messages placeholder — will be replaced when messages endpoint exists
   document.getElementById('statMessages').textContent = 5;
 }
 
@@ -73,7 +82,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   const user = requireLogin();
   if (!user) return;
 
-  // User chip
   const chip = document.querySelector('.user-chip');
   const initials = user.fullName.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
   chip.innerHTML = `
@@ -81,14 +89,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     <div>${user.fullName}<br><small>${user.role}</small></div>
   `;
 
-  // Greeting
   const firstName = user.fullName.split(' ')[0];
   document.getElementById('greetingName').textContent = firstName;
 
   await loadTrips();
   await loadCounts();
 
-  // Logout
   const logout = document.querySelector('.logout-link');
   if (logout) {
     logout.addEventListener('click', async (e) => {
