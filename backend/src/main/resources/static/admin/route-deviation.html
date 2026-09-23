@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Route Deviation — SafeRide SA</title>
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 <body>
 <div class="app">
@@ -17,58 +19,57 @@
       <a href="compliance.html">Compliance</a>
       <a href="messages.html">Messages</a>
       <a href="route-deviation.html" class="active">Route Deviation</a>
-      <a href="../index.html">Logout</a>
+      <a href="#" class="logout-link">Logout</a>
     </nav>
   </aside>
 
   <div class="main">
     <header class="topbar">
       <h1>Route Deviation</h1>
-      <div class="user-chip"><div class="avatar">RD</div><div>Raymond Dlamini</div></div>
+      <div class="user-chip"><div class="avatar">—</div><div>Loading…</div></div>
     </header>
 
     <div class="content">
       <div class="page-head">
         <div>
           <h2>Registered vs Actual Route</h2>
-          <p>Trip #A-1042 · Diamond Transport · CA 456-789</p>
+          <p id="tripInfo">Loading trip info…</p>
         </div>
-        <button class="btn btn-danger">Notify All Parents</button>
+        <div>
+          <select id="tripSelect" class="select" style="margin-right:8px"></select>
+          <button class="btn btn-danger" id="notifyBtn">Notify All Parents</button>
+        </div>
       </div>
 
-      <div class="alert alert-warning">
-        ⚠ Deviation detected 1.2 km from registered route at 07:38. 24 learners on board.
+      <div class="alert alert-warning" id="deviationAlert" style="display:none">
+        ⚠ Route deviation detected. Vehicle is off the registered route.
+      </div>
+      <div class="alert alert-info" id="onRouteAlert" style="display:none">
+        ✓ Vehicle is on the registered route.
       </div>
 
       <div class="card panel">
         <div class="panel-title"><h3>Map</h3></div>
-        <div style="background:#E8EEF3;border-radius:12px;height:400px;display:grid;place-items:center;color:var(--muted)">
-          [ Live map placeholder — Leaflet integration once backend is ready ]
-        </div>
+        <div id="map" style="height:450px;border-radius:12px"></div>
       </div>
 
       <div class="grid-2" style="margin-top:20px">
         <div class="card panel">
           <div class="panel-title"><h3>Deviation Details</h3></div>
-          <p><strong>Time:</strong> 07:38</p>
-          <p><strong>Distance from route:</strong> 1.2 km</p>
-          <p><strong>Duration off route:</strong> 6 minutes</p>
-          <p><strong>Learners on board:</strong> 24</p>
+          <div id="deviationDetails">Loading…</div>
         </div>
         <div class="card panel">
-          <div class="panel-title"><h3>Recent Deviations</h3></div>
-          <div class="activity">
-            <div class="dot"></div>
-            <div><strong>Diamond Transport</strong><small>Route C · 2 days ago</small></div>
-          </div>
-          <div class="activity">
-            <div class="dot"></div>
-            <div><strong>Galeshewe Tours</strong><small>Route A · 5 days ago</small></div>
-          </div>
+          <div class="panel-title"><h3>Learners on Board</h3></div>
+          <div id="learnersList">Loading…</div>
         </div>
       </div>
+
+      <p class="footer-note">SafeRide SA · Admin Portal</p>
     </div>
   </div>
 </div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="../js/route-deviation.js"></script>
 </body>
 </html>
