@@ -59,11 +59,10 @@ INSERT INTO learners (id, full_name, grade, parent_id, school_id) VALUES
 -- OPERATORS (id=1 has EXPIRED roadworthy)
 -- ============================================================
 INSERT INTO operators (id, user_id, company_name, school_id, prdp_expiry, roadworthy_expiry, registration_expiry) VALUES
-(1, 10, 'Galeshewe Tours',        1, '2025-08-12', '2025-01-05', '2025-11-30'),
-(2, 11, 'Diamond Transport',      1, '2025-09-20', '2025-10-15', '2025-12-31'),
-(3, 12, 'Kimberley Kids Rides',   1, '2025-10-08', '2026-01-20', '2026-03-15'),
-(4, 13, 'Nkosi Shuttle Services', 1, '2025-11-01', '2025-12-15', '2026-02-28');
-
+(1, 10, 'Galeshewe Tours',        1, DATE_ADD(CURDATE(), INTERVAL 4 MONTH),  DATE_SUB(CURDATE(), INTERVAL 4 MONTH), DATE_ADD(CURDATE(), INTERVAL 6 MONTH)),
+(2, 11, 'Diamond Transport',      1, DATE_ADD(CURDATE(), INTERVAL 2 MONTH),  DATE_ADD(CURDATE(), INTERVAL 22 DAY),  DATE_ADD(CURDATE(), INTERVAL 3 MONTH)),
+(3, 12, 'Kimberley Kids Rides',   1, DATE_ADD(CURDATE(), INTERVAL 15 DAY),   DATE_ADD(CURDATE(), INTERVAL 4 MONTH), DATE_ADD(CURDATE(), INTERVAL 5 MONTH)),
+(4, 13, 'Nkosi Shuttle Services', 1, DATE_ADD(CURDATE(), INTERVAL 2 MONTH),  DATE_ADD(CURDATE(), INTERVAL 3 MONTH), DATE_ADD(CURDATE(), INTERVAL 5 MONTH));
 -- ============================================================
 -- VEHICLES
 -- ============================================================
