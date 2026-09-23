@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compliance — SafeRide SA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">SafeRide SA<span>School Admin</span></div>
+    <nav class="nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="operators.html">Operators</a>
+      <a href="incidents.html">Incidents</a>
+      <a href="compliance.html" class="active">Compliance</a>
+      <a href="messages.html">Messages</a>
+      <a href="route-deviation.html">Route Deviation</a>
+      <a href="../index.html">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h1>Compliance Panel</h1>
+      <div class="user-chip"><div class="avatar">RD</div><div>Raymond Dlamini</div></div>
+    </header>
+
+    <div class="content">
+      <div class="page-head">
+        <div>
+          <h2>Compliance Overview</h2>
+          <p>Track PrDP, roadworthy, and registration expiry across all operators.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card stat">
+          <div class="label">Operators</div>
+          <div class="value">4</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Expired documents</div>
+          <div class="value" style="color:var(--danger)">1</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Expiring &lt; 30 days</div>
+          <div class="value" style="color:var(--warning)">1</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Fully compliant</div>
+          <div class="value" style="color:var(--success)">2</div>
+        </div>
+      </div>
+
+      <div class="card panel">
+        <div class="panel-title"><h3>All Operators</h3></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Operator</th><th>PrDP</th><th>Roadworthy</th><th>Registration</th><th>Overall</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Galeshewe Tours</td>
+                <td><span class="badge badge-green">Valid</span></td>
+                <td><span class="badge badge-red">Expired</span></td>
+                <td><span class="badge badge-green">Valid</span></td>
+                <td><span class="badge badge-red">Non-compliant</span></td>
+              </tr>
+              <tr>
+                <td>Diamond Transport</td>
+                <td><span class="badge badge-green">Valid</span></td>
+                <td><span class="badge badge-green">Valid</span></td>
+                <td><span class="badge badge-green">Valid</span></td>
+                <td><span class="badge badge-green">Compliant</span></td>
+              </tr>
+              <tr>
+                <td>Kimberley Kids Rides</td>
+                <td><span class="badge badge-amber">14 days</span></td>
+                <td><span class="badge badge-green">Valid</span></td>
+                <td><span class="badge badge-green">Valid</span></td>
+                <td><span class="badge badge-amber">Expiring soon</span></td>
+              </tr>
+              <tr>
+                <td>Nkosi Shuttle Services</td>
+                <td><span class="badge badge-green">Valid</span></td>
+                <td><span class="badge badge-green">Valid</span></td>
+                <td><span class="badge badge-green">Valid</span></td>
+                <td><span class="badge badge-green">Compliant</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
