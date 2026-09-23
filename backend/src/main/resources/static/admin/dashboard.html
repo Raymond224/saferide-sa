@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SafeRide SA - Admin Dashboard</title>
+<title>SafeRide SA — Admin Dashboard</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
       <a href="compliance.html">Compliance</a>
       <a href="messages.html">Messages</a>
       <a href="route-deviation.html">Route Deviation</a>
-      <a href="../index.html">Logout</a>
+      <a href="#" class="logout-link">Logout</a>
     </nav>
   </aside>
 
@@ -25,16 +25,16 @@
     <header class="topbar">
       <h1>Dashboard</h1>
       <div class="user-chip">
-        <div class="avatar">RD</div>
-        <div>Raymond Dlamini<br><small>Galeshewe High</small></div>
+        <div class="avatar">—</div>
+        <div>Loading…</div>
       </div>
     </header>
 
     <div class="content">
       <div class="page-head">
         <div>
-          <h2>Good morning, Raymond</h2>
-          <p>Here is the transport status for Galeshewe High School today.</p>
+          <h2>Good morning, <span id="greetingName">Admin</span></h2>
+          <p>Here is the transport status for your school today.</p>
         </div>
         <button class="btn btn-primary" onclick="location.href='operators.html'">+ Add Operator</button>
       </div>
@@ -42,23 +42,23 @@
       <div class="cards">
         <div class="card stat">
           <div class="label">Active Trips</div>
-          <div class="value">5</div>
-          <div class="note">2 delayed - 1 deviated</div>
+          <div class="value" id="statActiveTrips">—</div>
+          <div class="note" id="statActiveTripsNote">—</div>
         </div>
         <div class="card stat">
           <div class="label">Compliance Alerts</div>
-          <div class="value">2</div>
-          <div class="note">1 expired - 1 expiring soon</div>
+          <div class="value" id="statCompliance">—</div>
+          <div class="note" id="statComplianceNote">—</div>
         </div>
         <div class="card stat">
           <div class="label">Open Incidents</div>
-          <div class="value">1</div>
+          <div class="value" id="statIncidents">—</div>
           <div class="note">Reported today</div>
         </div>
         <div class="card stat">
           <div class="label">Parent Messages</div>
-          <div class="value">5</div>
-          <div class="note">2 unread</div>
+          <div class="value" id="statMessages">—</div>
+          <div class="note">Unread</div>
         </div>
       </div>
 
@@ -73,10 +73,8 @@
               <thead>
                 <tr><th>Operator</th><th>Route</th><th>Vehicle</th><th>Status</th></tr>
               </thead>
-              <tbody>
-                <tr><td>Galeshewe Tours</td><td>Route A</td><td>CA 123-456</td><td><span class="badge badge-green">On Route</span></td></tr>
-                <tr><td>Galeshewe Tours</td><td>Route B</td><td>CA 789-012</td><td><span class="badge badge-amber">Delayed</span></td></tr>
-                <tr><td>Diamond Transport</td><td>Route C</td><td>CA 456-789</td><td><span class="badge badge-red">Deviated</span></td></tr>
+              <tbody id="liveTripsBody">
+                <tr><td colspan="4" class="empty">Loading…</td></tr>
               </tbody>
             </table>
           </div>
@@ -86,22 +84,23 @@
           <div class="panel-title"><h3>Recent Activity</h3></div>
           <div class="activity">
             <div class="dot"></div>
-            <div><strong>Route deviation detected</strong><small>Diamond Transport - 10 min ago</small></div>
+            <div><strong>Route deviation detected</strong><small>Diamond Transport · 10 min ago</small></div>
           </div>
           <div class="activity">
             <div class="dot"></div>
-            <div><strong>Parent reported incident</strong><small>Puleng Mokoena - 25 min ago</small></div>
+            <div><strong>Parent reported incident</strong><small>Puleng Mokoena · 25 min ago</small></div>
           </div>
           <div class="activity">
             <div class="dot"></div>
-            <div><strong>Roadworthy certificate expired</strong><small>Galeshewe Tours - 1 hour ago</small></div>
+            <div><strong>Roadworthy certificate expired</strong><small>Galeshewe Tours · 1 hour ago</small></div>
           </div>
         </div>
       </div>
 
-      <p class="footer-note">SafeRide SA - Admin Portal</p>
+      <p class="footer-note">SafeRide SA · Admin Portal</p>
     </div>
   </div>
 </div>
+<script src="../js/admin.js"></script>
 </body>
 </html>
