@@ -48,6 +48,7 @@ public class AuthController {
 
         session.setAttribute("userId", user.getId());
         session.setAttribute("role", user.getRoleString());
+        session.setAttribute("schoolId", user.getSchoolId());
 
         return ResponseEntity.ok(toPublic(user));
     }
