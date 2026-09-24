@@ -17,67 +17,70 @@
       <a href="compliance.html">Compliance</a>
       <a href="messages.html" class="active">Messages</a>
       <a href="route-deviation.html">Route Deviation</a>
-      <a href="../index.html">Logout</a>
+      <a href="#" class="logout-link">Logout</a>
     </nav>
   </aside>
 
   <div class="main">
     <header class="topbar">
-      <h1>Parent Messages</h1>
-      <div class="user-chip"><div class="avatar">RD</div><div>Raymond Dlamini</div></div>
+      <h1>Messages</h1>
+      <div class="user-chip"><div class="avatar">—</div><div>Loading…</div></div>
     </header>
 
     <div class="content">
       <div class="page-head">
         <div>
-          <h2>Messages from Parents</h2>
+          <h2>Parent Messages</h2>
           <p>Reply to questions and reports from parents at your school.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card stat">
+          <div class="label">Total messages</div>
+          <div class="value" id="statTotal">—</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Unread</div>
+          <div class="value" id="statUnread" style="color:var(--danger)">—</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Read</div>
+          <div class="value" id="statRead" style="color:var(--success)">—</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Reply rate</div>
+          <div class="value" id="statRate">—</div>
         </div>
       </div>
 
       <div class="grid-2">
         <div class="card panel">
-          <div class="panel-title"><h3>Inbox</h3></div>
-          <div class="activity">
-            <div class="dot"></div>
-            <div>
-              <strong>Puleng Mokoena</strong>
-              <small>My child was not picked up this morning. Route A.</small>
-              <small>10 min ago</small>
-            </div>
+          <div class="panel-title">
+            <h3>Inbox</h3>
+            <select id="readFilter" class="select" style="padding:6px 10px;font-size:12px">
+              <option value="">All</option>
+              <option value="unread">Unread only</option>
+              <option value="read">Read only</option>
+            </select>
           </div>
-          <div class="activity">
-            <div class="dot"></div>
-            <div>
-              <strong>Thabo Nkosi</strong>
-              <small>Can I get a copy of the trip history for last week?</small>
-              <small>2 hours ago</small>
-            </div>
-          </div>
-          <div class="activity">
-            <div class="dot"></div>
-            <div>
-              <strong>Lerato Mahlangu</strong>
-              <small>Thank you for the quick response yesterday.</small>
-              <small>Yesterday</small>
-            </div>
+          <div id="messagesList">
+            <p class="empty">Loading…</p>
           </div>
         </div>
 
         <div class="card panel">
           <div class="panel-title"><h3>Reply</h3></div>
-          <p><strong>To:</strong> Puleng Mokoena</p>
-          <div class="form-group" style="margin-top:12px">
-            <label>Message</label>
-            <input class="input" placeholder="Type your reply…" style="min-height:120px">
-          </div>
-          <div class="form-actions">
-            <button class="btn btn-primary">Send Reply</button>
+          <div id="replyPane">
+            <p class="empty">Select a message to reply</p>
           </div>
         </div>
       </div>
+
+      <p class="footer-note">SafeRide SA · Admin Portal</p>
     </div>
   </div>
 </div>
+<script src="../js/messages.js"></script>
 </body>
 </html>
