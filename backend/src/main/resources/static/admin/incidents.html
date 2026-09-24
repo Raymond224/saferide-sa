@@ -17,14 +17,14 @@
       <a href="compliance.html">Compliance</a>
       <a href="messages.html">Messages</a>
       <a href="route-deviation.html">Route Deviation</a>
-      <a href="../index.html">Logout</a>
+      <a href="#" class="logout-link">Logout</a>
     </nav>
   </aside>
 
   <div class="main">
     <header class="topbar">
       <h1>Incident Inbox</h1>
-      <div class="user-chip"><div class="avatar">RD</div><div>Raymond Dlamini</div></div>
+      <div class="user-chip"><div class="avatar">—</div><div>Loading…</div></div>
     </header>
 
     <div class="content">
@@ -35,53 +35,58 @@
         </div>
       </div>
 
-      <div class="filters">
-        <select class="select">
-          <option>All statuses</option>
-          <option>Open</option>
-          <option>Investigating</option>
-          <option>Resolved</option>
-        </select>
-        <input class="input" placeholder="Search incidents…">
+      <div class="cards">
+        <div class="card stat">
+          <div class="label">Open</div>
+          <div class="value" id="statOpen" style="color:var(--danger)">—</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Investigating</div>
+          <div class="value" id="statInvestigating" style="color:var(--warning)">—</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Resolved</div>
+          <div class="value" id="statResolved" style="color:var(--success)">—</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Total</div>
+          <div class="value" id="statTotal">—</div>
+        </div>
       </div>
 
       <div class="card panel">
+        <div class="panel-title">
+          <h3>All Incidents</h3>
+          <select id="statusFilter" class="select">
+            <option value="">All statuses</option>
+            <option value="open">Open</option>
+            <option value="investigating">Investigating</option>
+            <option value="resolved">Resolved</option>
+          </select>
+        </div>
         <div class="table-wrap">
           <table>
             <thead>
-              <tr><th>Date</th><th>Reported by</th><th>Type</th><th>Trip</th><th>Status</th><th></th></tr>
+              <tr>
+                <th>Date</th>
+                <th>Reported by</th>
+                <th>Type</th>
+                <th>Trip</th>
+                <th>Status</th>
+                <th>Update</th>
+              </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>2025-01-15 07:42</td>
-                <td>Puleng Mokoena (Parent)</td>
-                <td>Route deviation</td>
-                <td>Route A · CA 123-456</td>
-                <td><span class="badge badge-red">Open</span></td>
-                <td><a href="incident-detail.html" class="btn btn-outline btn-sm">View</a></td>
-              </tr>
-              <tr>
-                <td>2025-01-14 16:10</td>
-                <td>Qetelo Sithole (Operator)</td>
-                <td>Vehicle breakdown</td>
-                <td>Route B · CA 789-012</td>
-                <td><span class="badge badge-amber">Investigating</span></td>
-                <td><a href="incident-detail.html" class="btn btn-outline btn-sm">View</a></td>
-              </tr>
-              <tr>
-                <td>2025-01-12 08:05</td>
-                <td>Puleng Mokoena (Parent)</td>
-                <td>Late pickup</td>
-                <td>Route A · CA 123-456</td>
-                <td><span class="badge badge-green">Resolved</span></td>
-                <td><a href="incident-detail.html" class="btn btn-outline btn-sm">View</a></td>
-              </tr>
+            <tbody id="incidentsBody">
+              <tr><td colspan="6" class="empty">Loading…</td></tr>
             </tbody>
           </table>
         </div>
       </div>
+
+      <p class="footer-note">SafeRide SA · Admin Portal</p>
     </div>
   </div>
 </div>
+<script src="../js/incidents.js"></script>
 </body>
 </html>
