@@ -31,3 +31,65 @@ function filterAudit(){
     row.style.display=(!q||text.includes(q))&&(!action||rowAction===action)?'':'none';
   });
 }
+
+
+function openAddSchoolForm(){
+  document.getElementById('addSchoolModal').style.display = 'flex';
+}
+
+function closeAddSchoolForm(){
+  document.getElementById('addSchoolModal').style.display = 'none';
+
+  document.getElementById('newSchoolName').value = '';
+  document.getElementById('newSchoolAddress').value = '';
+  document.getElementById('newSchoolAdmin').value = '';
+  document.getElementById('newSchoolContact').value = '';
+}
+
+function addSchool(){
+  const name = document.getElementById('newSchoolName').value.trim();
+  const address = document.getElementById('newSchoolAddress').value.trim();
+  const admin = document.getElementById('newSchoolAdmin').value.trim();
+  const contact = document.getElementById('newSchoolContact').value.trim();
+
+  if(!name || !address || !admin || !contact){
+    alert('Please complete all fields.');
+    return;
+  }
+
+  const table = document.getElementById('schoolTable');
+  const row = document.createElement('tr');
+
+  row.innerHTML = `
+    <td>${name}</td>
+    <td>${address}</td>
+    <td>${admin}</td>
+    <td>${contact}</td>
+    <td><span class="badge badge-green">Active</span></td>
+    <td><button class= "btn btn-outline btn-sm" onclick="viewSchool(this)">View</button></td>
+  `;
+
+  table.appendChild(row);
+
+  closeAddSchoolForm();
+
+  alert('School added successfully.');
+}
+
+
+function viewSchool(button){
+  const row = button.closest('tr');
+  const cells = row.querySelectorAll('td');
+
+  document.getElementById('viewSchoolName').textContent = cells[0].textContent;
+  document.getElementById('viewSchoolAddress').textContent = cells[1].textContent;
+  document.getElementById('viewSchoolAdmin').textContent = cells[2].textContent;
+  document.getElementById('viewSchoolContact').textContent = cells[3].textContent;
+  document.getElementById('viewSchoolStatus').textContent = cells[4].textContent;
+
+  document.getElementById('schoolDetailsModal').style.display = 'flex';
+}
+
+function closeSchoolDetails(){
+  document.getElementById('schoolDetailsModal').style.display = 'none';
+}
