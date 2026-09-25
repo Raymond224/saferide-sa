@@ -72,3 +72,16 @@ th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.03
 .footer-note{margin-top:25px;color:var(--muted);font-size:12px}
 @media(max-width:950px){.sidebar{width:200px}.main{margin-left:200px;width:calc(100% - 200px)}.cards{grid-template-columns:repeat(2,1fr)}.grid-2{grid-template-columns:1fr}}
 @media(max-width:650px){.sidebar{position:static;width:100%;min-height:auto}.app{display:block}.main{margin-left:0;width:100%}.cards,.form-grid{grid-template-columns:1fr}.topbar{padding:0 15px}.content{padding:18px}}
+
+
+/* Dashboard statistic cards */
+a.card.stat {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+a.card.stat:hover {
+  transform: translateY(-2px);
+}
