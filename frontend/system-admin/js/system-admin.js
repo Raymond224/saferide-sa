@@ -66,7 +66,7 @@ function addSchool(){
     <td>${admin}</td>
     <td>${contact}</td>
     <td><span class="badge badge-green">Active</span></td>
-    <td><button class="btn btn-outline btn-sm">View</button></td>
+    <td><button class= "btn btn-outline btn-sm" onclick="viewSchool(this)">View</button></td>
   `;
 
   table.appendChild(row);
