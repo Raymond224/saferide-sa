@@ -137,17 +137,37 @@ public class TripController {
         }
         return ResponseEntity.ok(Map.of("ok", true, "id", id, "status", newStatus));
     }
-        @GetMapping("/mine")
-    public ResponseEntity<?> mine(HttpSession session) {
+           @GetMapping("/mine")
+    public ResponseEntity<?> mine(@RequestParam(required = false) String status,
+                                   HttpSession session) {
         Object userId = session.getAttribute("userId");
         String role = (String) session.getAttribute("role");
         if (userId == null) {
             return error(HttpStatus.UNAUTHORIZED, "Not logged in");
         }
-        if (!"operator".equals(role)) {
-            return error(HttpStatus.FORBIDDEN, "Only operators can view their own trips");
+
+        List<Trip> trips;
+        long uid = ((Number) userId).longValue();
+
+        if ("operator".equals(role)) {
+            trips = tripRepository.findBySessionUser(uid);
+        } else if ("parent".equals(role)) {
+            trips = tripRepository.findForParent(uid);
+        } else {
+            return error(HttpStatus.FORBIDDEN, "Only operators and parents have 'my trips'");
         }
-        List<Trip> trips = tripRepository.findBySessionUser(((Number) userId).longValue());
+
+        if ("active".equalsIgnoreCase(status)) {
+            trips = trips.stream()
+                    .filter(t -> t.getStatusString() != null &&
+                            List.of("on-route", "delayed", "deviated").contains(t.getStatusString()))
+                    .toList();
+        } else if ("completed".equalsIgnoreCase(status)) {
+            trips = trips.stream()
+                    .filter(t -> "completed".equals(t.getStatusString()))
+                    .toList();
+        }
+
         return ResponseEntity.ok(trips);
     }
 

@@ -97,6 +97,21 @@ public class TripRepository {
                 MAPPER, userId
         );
     }
+        /** Trips carrying this parent's learners. */
+    public List<Trip> findForParent(Long parentId) {
+        return jdbc.query(
+                "SELECT DISTINCT t.*, o.company_name AS operator_name, " +
+                "       v.registration_number AS vehicle_registration " +
+                "FROM trips t " +
+                "JOIN trip_learners tl ON tl.trip_id = t.id " +
+                "JOIN learners l ON l.id = tl.learner_id " +
+                "LEFT JOIN operators o ON o.id = t.operator_id " +
+                "LEFT JOIN vehicles  v ON v.id = t.vehicle_id " +
+                "WHERE l.parent_id = ? " +
+                "ORDER BY t.id DESC",
+                MAPPER, parentId
+        );
+    }
 
     /** Update picked_up / dropped_off flags for a learner on a trip. */
     public int updateTripLearner(Long tripId, Long learnerId,
