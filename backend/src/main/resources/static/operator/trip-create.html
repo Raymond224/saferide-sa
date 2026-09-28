@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create Trip — SafeRide SA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">SafeRide SA<span>Operator</span></div>
+    <nav class="nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="trip-create.html" class="active">Create Trip</a>
+      <a href="trip-register.html">Learner Register</a>
+      <a href="compliance.html">Compliance</a>
+      <a href="#" class="logout-link">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h1>Create Trip</h1>
+      <div class="user-chip"><div class="avatar">—</div><div>Loading…</div></div>
+    </header>
+
+    <div class="content">
+      <div class="page-head">
+        <div>
+          <h2>New Trip</h2>
+          <p>Register a new trip before departure.</p>
+        </div>
+        <a href="dashboard.html" class="btn btn-outline">← Back</a>
+      </div>
+
+      <div id="statusBox"></div>
+
+      <div class="card panel">
+        <div class="panel-title"><h3>Trip Details</h3></div>
+        <form id="tripForm" class="form-grid">
+          <div class="form-group">
+            <label>Route name *</label>
+            <input class="input" name="routeName" required placeholder="e.g. Galeshewe Route A">
+          </div>
+          <div class="form-group">
+            <label>Vehicle *</label>
+            <select class="select" name="vehicleId" id="vehicleSelect" required>
+              <option value="">Loading vehicles…</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Departure time *</label>
+            <input class="input" name="departureTime" type="datetime-local" required>
+          </div>
+          <div class="form-group">
+            <label>Route ID (optional)</label>
+            <input class="input" name="routeId" type="number" placeholder="Leave blank if unsure">
+          </div>
+        </form>
+        <div class="form-actions">
+          <a href="dashboard.html" class="btn btn-outline">Cancel</a>
+          <button class="btn btn-primary" id="saveBtn" type="button">Create Trip</button>
+        </div>
+      </div>
+
+      <p class="footer-note">SafeRide SA · Operator Portal</p>
+    </div>
+  </div>
+</div>
+<script src="../js/trip-create.js"></script>
+</body>
+</html>
