@@ -111,6 +111,16 @@ public class UserRepository {
         return key == null ? null : key.longValue();
     }
 
+    /** Change a user's role. */
+    public int updateRole(Long id, String newRole) {
+        return jdbc.update("UPDATE users SET role = ? WHERE id = ?", newRole, id);
+    }
+
+    /** Activate or suspend a user. */
+    public int updateActive(Long id, boolean active) {
+        return jdbc.update("UPDATE users SET active = ? WHERE id = ?", active, id);
+    }
+
     /** Soft-delete a user (keeps audit history). */
     public int softDelete(Long id) {
         return jdbc.update(
