@@ -56,7 +56,32 @@ public class TripController {
         }
         return ResponseEntity.ok(found.get());
     }
+    @PutMapping("/{tripId}/learners/{learnerId}")
+    public ResponseEntity<?> tickLearner(@PathVariable Long tripId,
+                                          @PathVariable Long learnerId,
+                                          @RequestBody Map<String, Object> body,
+                                          HttpSession session) {
+        Object userId = session.getAttribute("userId");
+        String role = (String) session.getAttribute("role");
+        if (userId == null) {
+            return error(HttpStatus.UNAUTHORIZED, "Not logged in");
+        }
+        if (!"operator".equals(role) && !"admin".equals(role) && !"system-admin".equals(role)) {
+            return error(HttpStatus.FORBIDDEN, "Not allowed");
+        }
+        Object pickedUpObj = body.get("pickedUp");
+        Object droppedOffObj = body.get("droppedOff");
 
+        int updated = tripRepository.updateTripLearner(
+                tripId, learnerId,
+                pickedUpObj instanceof Boolean ? (Boolean) pickedUpObj : null,
+                droppedOffObj instanceof Boolean ? (Boolean) droppedOffObj : null
+        );
+        if (updated == 0) {
+            return error(HttpStatus.NOT_FOUND, "Trip-learner record not found");
+        }
+        return ResponseEntity.ok(Map.of("ok", true));
+    }
     @PostMapping
     public ResponseEntity<?> create(@RequestBody CreateTripRequest body, HttpSession session) {
         Object userId = session.getAttribute("userId");
@@ -112,6 +137,20 @@ public class TripController {
         }
         return ResponseEntity.ok(Map.of("ok", true, "id", id, "status", newStatus));
     }
+        @GetMapping("/mine")
+    public ResponseEntity<?> mine(HttpSession session) {
+        Object userId = session.getAttribute("userId");
+        String role = (String) session.getAttribute("role");
+        if (userId == null) {
+            return error(HttpStatus.UNAUTHORIZED, "Not logged in");
+        }
+        if (!"operator".equals(role)) {
+            return error(HttpStatus.FORBIDDEN, "Only operators can view their own trips");
+        }
+        List<Trip> trips = tripRepository.findBySessionUser(((Number) userId).longValue());
+        return ResponseEntity.ok(trips);
+    }
+
 
     // -------- helpers --------
 

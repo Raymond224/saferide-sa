@@ -84,7 +84,48 @@ public class TripRepository {
                 MAPPER
         );
     }
+    /** Trips belonging to the operator account for this user id. */
+    public List<Trip> findBySessionUser(Long userId) {
+        return jdbc.query(
+                "SELECT t.*, o.company_name AS operator_name, " +
+                "       v.registration_number AS vehicle_registration " +
+                "FROM trips t " +
+                "LEFT JOIN operators o ON o.id = t.operator_id " +
+                "LEFT JOIN vehicles  v ON v.id = t.vehicle_id " +
+                "WHERE o.user_id = ? " +
+                "ORDER BY t.id DESC",
+                MAPPER, userId
+        );
+    }
 
+    /** Update picked_up / dropped_off flags for a learner on a trip. */
+    public int updateTripLearner(Long tripId, Long learnerId,
+                                  Boolean pickedUp, Boolean droppedOff) {
+        StringBuilder sql = new StringBuilder("UPDATE trip_learners SET ");
+        java.util.List<Object> params = new java.util.ArrayList<>();
+
+        if (pickedUp != null) {
+            sql.append("picked_up = ?, picked_up_at = ")
+               .append(pickedUp ? "CURRENT_TIMESTAMP" : "NULL")
+               .append(", ");
+            params.add(pickedUp ? 1 : 0);
+        }
+        if (droppedOff != null) {
+            sql.append("dropped_off = ?, dropped_off_at = ")
+               .append(droppedOff ? "CURRENT_TIMESTAMP" : "NULL")
+               .append(", ");
+            params.add(droppedOff ? 1 : 0);
+        }
+        String finalSql = sql.toString();
+        if (finalSql.endsWith(", ")) {
+            finalSql = finalSql.substring(0, finalSql.length() - 2);
+        }
+        finalSql += " WHERE trip_id = ? AND learner_id = ?";
+        params.add(tripId);
+        params.add(learnerId);
+
+        return jdbc.update(finalSql, params.toArray());
+    }
     public List<Trip> findByOperator(Long operatorId) {
         return jdbc.query(
                 BASE_SELECT + " WHERE t.operator_id = ? ORDER BY t.id DESC",
