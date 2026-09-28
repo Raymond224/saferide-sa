@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operator Dashboard — SafeRide SA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">SafeRide SA<span>Operator</span></div>
+    <nav class="nav">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="trip-create.html">Create Trip</a>
+      <a href="trip-register.html">Learner Register</a>
+      <a href="compliance.html">Compliance</a>
+      <a href="#" class="logout-link">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h1>Dashboard</h1>
+      <div class="user-chip">
+        <div class="avatar">—</div>
+        <div>Loading…</div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="page-head">
+        <div>
+          <h2>Good morning, <span id="greetingName">Operator</span></h2>
+          <p>Your trips and compliance status for today.</p>
+        </div>
+        <button class="btn btn-primary" onclick="location.href='trip-create.html'">+ Create Trip</button>
+      </div>
+
+      <div class="cards">
+        <div class="card stat">
+          <div class="label">My Active Trips</div>
+          <div class="value" id="statActiveTrips">—</div>
+          <div class="note" id="statActiveTripsNote">—</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Learners Today</div>
+          <div class="value" id="statLearners">—</div>
+          <div class="note">On active trips</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Compliance Alerts</div>
+          <div class="value" id="statCompliance" style="color:var(--danger)">—</div>
+          <div class="note" id="statComplianceNote">—</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Company</div>
+          <div class="value" id="statCompany" style="font-size:1.1rem">—</div>
+          <div class="note">Operator</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card panel">
+          <div class="panel-title">
+            <h3>My Active Trips</h3>
+            <a href="trip-create.html" class="btn btn-outline btn-sm">+ New Trip</a>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Route</th><th>Vehicle</th><th>Departure</th><th>Status</th><th></th></tr>
+              </thead>
+              <tbody id="tripsBody">
+                <tr><td colspan="5" class="empty">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card panel">
+          <div class="panel-title"><h3>Compliance Status</h3></div>
+          <div id="complianceBox">
+            <p class="empty">Loading…</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer-note">SafeRide SA · Operator Portal</p>
+    </div>
+  </div>
+</div>
+<script src="../js/operator.js"></script>
+</body>
+</html>
