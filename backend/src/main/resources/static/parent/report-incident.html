@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report Incident - SafeRide SA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      SafeRide SA
+      <span>Parent Portal</span>
+    </div>
+
+    <nav class="nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="trip-status.html">Trip Status</a>
+      <a href="trip-history.html">Trip History</a>
+      <a href="report-incident.html" class="active">Report Incident</a>
+      <a href="messages.html">Messages</a>
+      <a href="#" class="logout-link">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+
+    <header class="topbar">
+      <h1>Report Incident</h1>
+
+      <div class="user-chip">
+        <div class="avatar">--</div>
+        <div>Loading...</div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h2>Report a Safety Incident</h2>
+          <p>
+            Tell us what happened. Your report is sent straight
+            to the school administrator.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+
+        <!-- New incident report -->
+        <div class="card panel">
+
+          <div class="panel-title">
+            <h3>New Report</h3>
+          </div>
+
+          <div id="formMsg"></div>
+
+          <form id="incidentForm">
+
+            <div class="form-group" style="margin-bottom:16px">
+              <label for="tripSelect">
+                Related trip (optional)
+              </label>
+
+              <select
+                id="tripSelect"
+                class="select"
+                style="width:100%"
+              >
+                <option value="">
+                  -- Not trip-specific --
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom:16px">
+
+              <label for="typeSelect">
+                Type
+              </label>
+
+              <select
+                id="typeSelect"
+                class="select"
+                style="width:100%"
+                required
+              >
+                <option value="">
+                  Select a type...
+                </option>
+
+                <option value="late-pickup">
+                  Late pick-up
+                </option>
+
+                <option value="route-deviation">
+                  Route deviation
+                </option>
+
+                <option value="breakdown">
+                  Vehicle breakdown
+                </option>
+
+                <option value="safety-concern">
+                  Safety concern
+                </option>
+
+                <option value="not-picked-up">
+                  Child not picked up
+                </option>
+
+                <option value="other">
+                  Other
+                </option>
+              </select>
+
+            </div>
+
+            <div class="form-group" style="margin-bottom:16px">
+
+              <label for="description">
+                Description
+              </label>
+
+              <textarea
+                id="description"
+                class="input"
+                rows="5"
+                required
+                style="
+                  width:100%;
+                  min-height:120px;
+                  resize:vertical;
+                  font-family:inherit
+                "
+                placeholder="Describe what happened..."
+              ></textarea>
+
+            </div>
+
+            <div class="form-actions">
+
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="submitBtn"
+              >
+                Submit Report
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+        <!-- Parent's previous reports -->
+        <div class="card panel">
+
+          <div class="panel-title">
+            <h3>My Reports</h3>
+          </div>
+
+          <div id="myReports">
+            <p class="empty">
+              Loading...
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="footer-note">
+        SafeRide SA - Parent Portal
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<script src="../js/parent-incidents.js"></script>
+</body>
+</html>

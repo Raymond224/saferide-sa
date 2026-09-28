@@ -1,0 +1,68 @@
+cat > ~/saferide-sa/backend/src/main/resources/static/system-admin/users.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>User Management | SafeRide SA</title><link rel="stylesheet" href="../css/style.css"></head>
+<body><div class="app">
+<aside class="sidebar">
+  <div class="brand">SafeRide SA<span>System Administrator</span></div>
+  <nav class="nav">
+    <a href="dashboard.html">▦ Dashboard</a>
+    <a href="users.html" class="active">♙ User Management</a>
+    <a href="schools.html">▣ School Management</a>
+    <a href="audit-logs.html">◷ Audit Logs</a>
+    <a href="#" class="logout-link">Logout</a>
+  </nav>
+</aside>
+<main class="main">
+<header class="topbar">
+  <h1>SafeRide SA</h1>
+  <div class="user-chip"><span>System Administrator</span><div class="avatar">SA</div></div>
+</header>
+<section class="content">
+<div class="page-head">
+  <div>
+    <h2>User Management</h2>
+    <p>View, activate, suspend and manage SafeRide SA user accounts.</p>
+  </div>
+  <button class="btn btn-primary" onclick="alert('Create-user form coming soon.')">+ Add User</button>
+</div>
+<div class="card panel">
+  <div class="filters">
+    <input class="input" id="userSearch" placeholder="Search name or email..." oninput="filterUsers()">
+    <select class="select" id="roleFilter" onchange="filterUsers()">
+      <option value="">All roles</option>
+      <option>Parent</option>
+      <option>Operator</option>
+      <option>School Admin</option>
+      <option>System Admin</option>
+    </select>
+    <select class="select" id="statusFilter" onchange="filterUsers()">
+      <option value="">All statuses</option>
+      <option>Active</option>
+      <option>Suspended</option>
+    </select>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Created</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="userTable">
+        <tr><td colspan="6" class="empty">Loading users…</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+</main>
+</div>
+<script src="js/system-admin.js"></script>
+<script src="js/users.js"></script>
+</body></html>
