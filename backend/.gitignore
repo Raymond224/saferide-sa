@@ -1,0 +1,6 @@
+# Local config - never commit real credentials
+application.properties
+cookies.txt
+
+# Maven build output
+target/
