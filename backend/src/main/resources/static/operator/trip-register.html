@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learner Register — SafeRide SA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">SafeRide SA<span>Operator</span></div>
+    <nav class="nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="trip-create.html">Create Trip</a>
+      <a href="trip-register.html" class="active">Learner Register</a>
+      <a href="compliance.html">Compliance</a>
+      <a href="#" class="logout-link">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h1>Learner Register</h1>
+      <div class="user-chip">
+        <div class="avatar">—</div>
+        <div>Loading…</div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="page-head">
+        <div>
+          <h2 id="tripTitle">Loading trip…</h2>
+          <p id="tripSubtitle">Tick off each learner as you pick them up and drop them off.</p>
+        </div>
+        <select id="tripPicker" class="select" style="min-width:260px"></select>
+      </div>
+
+      <div class="alert alert-info" id="runningCount">
+        <strong>Running count:</strong>
+        <span id="countPickedUp">0</span> picked up ·
+        <span id="countDroppedOff">0</span> dropped off ·
+        <span id="countTotal">0</span> total
+      </div>
+
+      <div class="card panel">
+        <div class="panel-title">
+          <h3>Learners on this trip</h3>
+          <span style="font-size:12px;color:var(--muted)">Changes save instantly and are visible to parents</span>
+        </div>
+        <div id="learnersBox">
+          <p class="empty">Loading learners…</p>
+        </div>
+      </div>
+
+      <p class="footer-note">SafeRide SA · Operator Portal</p>
+    </div>
+  </div>
+</div>
+<script src="../js/trip-register.js"></script>
+</body>
+</html>
