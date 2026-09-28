@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Messages - SafeRide SA</title>
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+  .bubble {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+
+  .bubble.mine {
+    background: var(--primary);
+    color: #fff;
+    margin-left: auto;
+    border-bottom-right-radius: 2px;
+  }
+
+  .bubble.theirs {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    margin-right: auto;
+    border-bottom-left-radius: 2px;
+  }
+
+  .bubble small {
+    display: block;
+    margin-top: 6px;
+    opacity: .75;
+    font-size: 11px;
+  }
+
+  .thread {
+    display: flex;
+    flex-direction: column;
+    max-height: 480px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+</style>
+</head>
+
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      SafeRide SA
+      <span>Parent Portal</span>
+    </div>
+
+    <nav class="nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="trip-status.html">Trip Status</a>
+      <a href="trip-history.html">Trip History</a>
+      <a href="report-incident.html">Report Incident</a>
+      <a href="messages.html" class="active">Messages</a>
+      <a href="#" class="logout-link">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+
+    <header class="topbar">
+      <h1>Messages</h1>
+
+      <div class="user-chip">
+        <div class="avatar">--</div>
+        <div>Loading...</div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h2>Message the School</h2>
+          <p>
+            Send a message directly to your child's school administrator.
+          </p>
+        </div>
+      </div>
+
+      <div class="card panel">
+
+        <div class="panel-title">
+          <h3>Conversation</h3>
+        </div>
+
+        <div class="thread" id="thread">
+          <p class="empty">
+            Loading...
+          </p>
+        </div>
+
+        <div
+          style="
+            margin-top:20px;
+            border-top:1px solid var(--border);
+            padding-top:16px
+          "
+        >
+
+          <div
+            class="form-group"
+            style="margin-bottom:12px"
+          >
+
+            <label for="composeText">
+              New message
+            </label>
+
+            <textarea
+              id="composeText"
+              class="input"
+              rows="3"
+              style="
+                width:100%;
+                min-height:80px;
+                resize:vertical;
+                font-family:inherit
+              "
+              placeholder="Type your message..."
+            ></textarea>
+
+          </div>
+
+          <div class="form-actions">
+
+            <button
+              class="btn btn-primary"
+              id="sendBtn"
+            >
+              Send
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="footer-note">
+        SafeRide SA - Parent Portal
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<script src="../js/parent-messages.js"></script>
+</body>
+</html>
