@@ -19,11 +19,33 @@
 <section class="content">
 <div class="page-head"><div><h2>System Administrator Dashboard</h2><p>Manage users, schools and system activity.</p></div>
 <button class="btn btn-primary" onclick="location.href='users.html'">+ Manage Users</button></div>
+
 <div class="cards">
-<div class="card stat"><div class="label">Total Users</div><div class="value" id="userCount">24</div><div class="note">All registered accounts</div></div>
-<div class="card stat"><div class="label">Active Users</div><div class="value">21</div><div class="note">Currently enabled</div></div>
-<div class="card stat"><div class="label">Schools</div><div class="value" id="schoolCount">6</div><div class="note">Registered schools</div></div>
-<div class="card stat"><div class="label">Audit Events</div><div class="value">148</div><div class="note">Recorded system actions</div></div>
+
+<a href="users.html" class="card stat">
+  <div class="label">Total Users</div>
+  <div class="value" id="userCount">24</div>
+  <div class="note">All registered accounts</div>
+</a>
+
+<a href="users.html" class="card stat">
+  <div class="label">Active Users</div>
+  <div class="value">21</div>
+  <div class="note">Currently enabled</div>
+</a>
+
+<a href="schools.html" class="card stat">
+  <div class="label">Schools</div>
+  <div class="value" id="schoolCount">6</div>
+  <div class="note">Registered schools</div>
+</a>
+
+<a href="audit-logs.html" class="card stat">
+  <div class="label">Audit Events</div>
+  <div class="value">148</div>
+  <div class="note">Recorded system actions</div>
+</a>
+
 </div>
 <div class="grid-2">
 <div class="card panel"><div class="panel-title"><h3>Recent System Activity</h3><a href="audit-logs.html" class="btn btn-outline btn-sm">View all</a></div>
