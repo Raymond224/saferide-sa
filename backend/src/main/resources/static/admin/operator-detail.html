@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operator Detail — SafeRide SA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">SafeRide SA<span>School Admin</span></div>
+    <nav class="nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="operators.html" class="active">Operators</a>
+      <a href="incidents.html">Incidents</a>
+      <a href="compliance.html">Compliance</a>
+      <a href="messages.html">Messages</a>
+      <a href="route-deviation.html">Route Deviation</a>
+      <a href="../index.html">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h1>Operator Detail</h1>
+      <div class="user-chip"><div class="avatar">RD</div><div>Raymond Dlamini</div></div>
+    </header>
+
+    <div class="content">
+      <div class="page-head">
+        <div>
+          <h2>Galeshewe Tours</h2>
+          <p>Contact: Qetelo Sithole · 072 444 4444 · qetelo@tours.co.za</p>
+        </div>
+        <a href="operators.html" class="btn btn-outline">← Back</a>
+      </div>
+
+      <div class="alert alert-warning">
+        ⚠ Roadworthy certificate expired on 2025-01-05. Operator cannot operate until renewed.
+      </div>
+
+      <div class="grid-2">
+        <div class="card panel">
+          <div class="panel-title"><h3>Vehicles</h3></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Reg</th><th>Make / Model</th><th>Capacity</th><th>Roadworthy</th></tr></thead>
+              <tbody>
+                <tr><td>CA 123-456</td><td>Toyota Quantum</td><td>15</td><td><span class="badge badge-red">Expired</span></td></tr>
+                <tr><td>CA 789-012</td><td>Mercedes Sprinter</td><td>22</td><td><span class="badge badge-green">Valid</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card panel">
+          <div class="panel-title"><h3>Compliance</h3></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Document</th><th>Expiry</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>PrDP</td><td>2025-08-12</td><td><span class="badge badge-green">Valid</span></td></tr>
+                <tr><td>Roadworthy</td><td>2025-01-05</td><td><span class="badge badge-red">Expired</span></td></tr>
+                <tr><td>Registration</td><td>2025-11-30</td><td><span class="badge badge-green">Valid</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card panel" style="margin-top:20px">
+        <div class="panel-title"><h3>Drivers</h3></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Name</th><th>Phone</th><th>PrDP</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Qetelo Sithole</td><td>072 444 4444</td><td>2025-08-12</td><td><span class="badge badge-green">Active</span></td></tr>
+              <tr><td>Jacob Mahlangu</td><td>072 555 5555</td><td>2025-06-01</td><td><span class="badge badge-green">Active</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

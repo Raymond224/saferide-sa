@@ -1,0 +1,35 @@
+# ============================================================
+# SafeRide SA — Application Configuration
+# ============================================================
+
+# Server
+server.port=8080
+server.servlet.session.timeout=60m
+spring.application.name=saferide
+
+# ============================================================
+# Database (MySQL)
+# ============================================================
+spring.datasource.url=jdbc:mysql://localhost:3306/saferide?useSSL=false&serverTimezone=Africa/Johannesburg&allowPublicKeyRetrieval=true
+spring.datasource.username=root
+spring.datasource.password=CHANGE_ME
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# ============================================================
+# SQL init — runs schema.sql and seed.sql on startup
+# ============================================================
+spring.sql.init.mode=always
+spring.sql.init.schema-locations=classpath:schema.sql
+spring.sql.init.data-locations=classpath:seed.sql
+spring.sql.init.continue-on-error=true
+
+# ============================================================
+# JSON output
+# ============================================================
+spring.jackson.serialization.indent-output=true
+
+# ============================================================
+# Logging
+# ============================================================
+logging.level.za.co.saferide=DEBUG
+logging.level.org.springframework.jdbc=INFO
