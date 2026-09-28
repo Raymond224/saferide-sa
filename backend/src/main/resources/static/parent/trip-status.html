@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trip Status - SafeRide SA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      SafeRide SA
+      <span>Parent Portal</span>
+    </div>
+
+    <nav class="nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="trip-status.html" class="active">Trip Status</a>
+      <a href="trip-history.html">Trip History</a>
+      <a href="report-incident.html">Report Incident</a>
+      <a href="messages.html">Messages</a>
+      <a href="#" class="logout-link">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+
+    <header class="topbar">
+      <h1>Trip Status</h1>
+
+      <div class="user-chip">
+        <div class="avatar">--</div>
+        <div>Loading...</div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h2>Live Trip Status</h2>
+          <p>
+            Trips currently scheduled or on the road for your children.
+            Refreshes every 30 seconds.
+          </p>
+        </div>
+
+        <button class="btn btn-outline" id="refreshBtn">
+          Refresh
+        </button>
+      </div>
+
+      <div class="card panel">
+
+        <div class="panel-title">
+          <h3>Active Trips</h3>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+
+            <thead>
+              <tr>
+                <th>Route</th>
+                <th>Operator</th>
+                <th>Vehicle</th>
+                <th>Departure</th>
+                <th>Status</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+
+            <tbody id="tripsBody">
+              <tr>
+                <td colspan="6" class="empty">
+                  Loading...
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+
+      </div>
+
+      <p class="footer-note">
+        SafeRide SA - Parent Portal
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<script src="../js/parent-trip-status.js"></script>
+</body>
+</html>

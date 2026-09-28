@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SafeRide SA - Parent Dashboard</title>
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .legend .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+  }
+
+  .child-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+
+  .child-card .name {
+    font-weight: 800;
+    font-size: 14px;
+  }
+
+  .child-card .meta {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  .child-card:last-child {
+    margin-bottom: 0;
+  }
+
+  .empty {
+    padding: 20px 0;
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      SafeRide SA
+      <span>Parent Portal</span>
+    </div>
+
+    <nav class="nav">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="trip-status.html">Trip Status</a>
+      <a href="trip-history.html">Trip History</a>
+      <a href="report-incident.html">Report Incident</a>
+      <a href="messages.html">Messages</a>
+      <a href="#" class="logout-link">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+
+    <header class="topbar">
+      <h1>Dashboard</h1>
+
+      <div class="user-chip">
+        <div class="avatar">--</div>
+        <div>Loading...</div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h2>
+            Good morning,
+            <span id="greetingName">Parent</span>
+          </h2>
+
+          <p>
+            Here is today's transport status for your children.
+          </p>
+        </div>
+
+        <button
+          class="btn btn-primary"
+          onclick="location.href='report-incident.html'">
+          Report Incident
+        </button>
+      </div>
+
+      <!-- Dashboard statistics -->
+      <div class="cards">
+
+        <div class="card stat">
+          <div class="label">Children Registered</div>
+          <div class="value" id="statChildren">--</div>
+        </div>
+
+        <div class="card stat">
+          <div class="label">Active Trips</div>
+          <div class="value" id="statActiveTrips">--</div>
+          <div class="note">Involving your children</div>
+        </div>
+
+        <div class="card stat">
+          <div class="label">Unread Replies</div>
+          <div
+            class="value"
+            id="statMessages"
+            style="color:var(--danger)">
+            --
+          </div>
+        </div>
+
+        <div class="card stat">
+          <div class="label">Open Incidents</div>
+          <div class="value" id="statIncidents">--</div>
+          <div class="note">Reported by you</div>
+        </div>
+
+      </div>
+
+      <div class="grid-2">
+
+        <!-- Children -->
+        <div class="card panel">
+
+          <div class="panel-title">
+            <h3>My Children</h3>
+          </div>
+
+          <div class="legend">
+            <span>
+              <span
+                class="dot"
+                style="background:var(--info)">
+              </span>
+              Scheduled
+            </span>
+
+            <span>
+              <span
+                class="dot"
+                style="background:var(--success)">
+              </span>
+              En Route / Picked Up
+            </span>
+
+            <span>
+              <span
+                class="dot"
+                style="background:var(--accent)">
+              </span>
+              Dropped Off / At School
+            </span>
+
+            <span>
+              <span
+                class="dot"
+                style="background:var(--danger)">
+              </span>
+              Delayed / Deviated
+            </span>
+          </div>
+
+          <div id="childrenList">
+            <p class="empty">Loading...</p>
+          </div>
+
+        </div>
+
+        <!-- Active trips -->
+        <div class="card panel">
+
+          <div class="panel-title">
+            <h3>Active Trips</h3>
+
+            <a
+              href="trip-status.html"
+              class="btn btn-outline btn-sm">
+              View All
+            </a>
+          </div>
+
+          <div id="activeTripsList">
+            <p class="empty">Loading...</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="footer-note">
+        SafeRide SA - Parent Portal
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<script src="../js/parent-dashboard.js"></script>
+</body>
+</html>
