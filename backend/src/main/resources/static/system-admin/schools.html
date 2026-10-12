@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>School Management | SafeRide SA</title><link rel="stylesheet" href="../css/style.css"></head>
+<body><div class="app">
+<aside class="sidebar">
+  <div class="brand">SafeRide SA<span>System Administrator</span></div>
+  <nav class="nav">
+    <a href="dashboard.html">▦ Dashboard</a>
+    <a href="users.html">♙ User Management</a>
+    <a href="schools.html" class="active">▣ School Management</a>
+    <a href="audit-logs.html">◷ Audit Logs</a>
+    <a href="#" class="logout-link">Logout</a>
+  </nav>
+</aside>
+<main class="main">
+<header class="topbar">
+  <h1>SafeRide SA</h1>
+  <div class="user-chip"><span>System Administrator</span><div class="avatar">SA</div></div>
+</header>
+<section class="content">
+<div class="page-head">
+  <div>
+    <h2>School Management</h2>
+    <p>View and manage all schools registered on the SafeRide SA platform.</p>
+  </div>
+  <button class="btn btn-primary" id="btnAddSchool">+ Add School</button>
+</div>
+<div class="card panel">
+  <div class="filters">
+    <input class="input" id="schoolSearch" placeholder="Search school name, address or email...">
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>School Name</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Users</th>
+          <th>Created</th>
+        </tr>
+      </thead>
+      <tbody id="schoolTable">
+        <tr><td colspan="6" class="empty">Loading schools…</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+</main>
+</div>
+<script src="js/schools.js"></script>
+</body></html>

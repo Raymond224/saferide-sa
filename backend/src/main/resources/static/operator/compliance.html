@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compliance — SafeRide SA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">SafeRide SA<span>Operator</span></div>
+    <nav class="nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="trip-create.html">Create Trip</a>
+      <a href="trip-register.html">Learner Register</a>
+      <a href="compliance.html" class="active">Compliance</a>
+      <a href="#" class="logout-link">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h1>Compliance</h1>
+      <div class="user-chip"><div class="avatar">—</div><div>Loading…</div></div>
+    </header>
+
+    <div class="content">
+      <div class="page-head">
+        <div>
+          <h2>My Compliance Documents</h2>
+          <p>Keep these up to date — expired documents block new trips.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card stat">
+          <div class="label">PrDP</div>
+          <div class="value" id="prdpStatus" style="font-size:1.1rem">—</div>
+          <div class="note" id="prdpExpiry">—</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Roadworthy</div>
+          <div class="value" id="rwStatus" style="font-size:1.1rem">—</div>
+          <div class="note" id="rwExpiry">—</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Registration</div>
+          <div class="value" id="regStatus" style="font-size:1.1rem">—</div>
+          <div class="note" id="regExpiry">—</div>
+        </div>
+        <div class="card stat">
+          <div class="label">Company</div>
+          <div class="value" id="companyName" style="font-size:1.1rem">—</div>
+          <div class="note">Registered operator</div>
+        </div>
+      </div>
+
+      <div class="card panel">
+        <div class="panel-title"><h3>Document Details</h3></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Document</th><th>Expiry Date</th><th>Status</th><th>What to do</th></tr>
+            </thead>
+            <tbody id="docTable">
+              <tr><td colspan="4" class="empty">Loading…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="footer-note">SafeRide SA · Operator Portal</p>
+    </div>
+  </div>
+</div>
+<script src="../js/compliance-operator.js"></script>
+</body>
+</html>

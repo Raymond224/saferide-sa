@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incident Detail — SafeRide SA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">SafeRide SA<span>School Admin</span></div>
+    <nav class="nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="operators.html">Operators</a>
+      <a href="incidents.html" class="active">Incidents</a>
+      <a href="compliance.html">Compliance</a>
+      <a href="messages.html">Messages</a>
+      <a href="route-deviation.html">Route Deviation</a>
+      <a href="../index.html">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h1>Incident #1042</h1>
+      <div class="user-chip"><div class="avatar">RD</div><div>Raymond Dlamini</div></div>
+    </header>
+
+    <div class="content">
+      <div class="page-head">
+        <div>
+          <h2>Route deviation on Route A</h2>
+          <p>Reported by Puleng Mokoena on 2025-01-15 at 07:42</p>
+        </div>
+        <a href="incidents.html" class="btn btn-outline">← Back to Inbox</a>
+      </div>
+
+      <div class="grid-2">
+        <div class="card panel">
+          <div class="panel-title"><h3>Details</h3></div>
+          <p><strong>Type:</strong> Route deviation</p>
+          <p><strong>Trip:</strong> Route A · CA 123-456 · Galeshewe Tours</p>
+          <p><strong>Description:</strong> "Vehicle took an unregistered turn near the taxi rank. My child was on board."</p>
+          <p><strong>Current status:</strong> <span class="badge badge-red">Open</span></p>
+        </div>
+
+        <div class="card panel">
+          <div class="panel-title"><h3>Actions</h3></div>
+          <div class="form-group">
+            <label>Update status</label>
+            <select class="select">
+              <option>Open</option>
+              <option>Investigating</option>
+              <option>Resolved</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-top:12px">
+            <label>Notes</label>
+            <input class="input" placeholder="Internal notes…">
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
